@@ -1,0 +1,13 @@
+site_name: tutor
+site_description: A Magic: The Gathering card tutor for Slack.
+site_author: Kyle Chamberlin
+repo_url: https://github.com/KyleChamberlin/demonic-tutor
+
+theme: readthedocs
+
+pages:
+- Home: index.md
+- About:
+  - Release Notes: about/changelog.md
+  - Contributing: about/contributing.md
+  - License: about/license.md

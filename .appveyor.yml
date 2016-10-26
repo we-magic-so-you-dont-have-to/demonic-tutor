@@ -1,0 +1,25 @@
+environment:
+  global:
+    RANDOM_SEED: 0
+  matrix:
+    - PYTHON_MAJOR: 3
+      PYTHON_MINOR: 5
+
+cache:
+  - env
+
+install:
+  # Export build paths
+  - copy C:\MinGW\bin\mingw32-make.exe C:\MinGW\bin\make.exe
+  - set PATH=%PATH%;C:\MinGW\bin
+  - make --version
+  # Check system dependencies
+  - make doctor || echo "Some system dependencies might be missing"
+  # Install project dependencies
+  - make install
+
+build: off
+
+test_script:
+  - make check
+  - make test

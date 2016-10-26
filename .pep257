@@ -1,0 +1,9 @@
+[pep257]
+
+# D211: No blank lines allowed before class docstring
+add_select = D211
+
+# D102: Missing docstring in public method
+# D104: Missing docstring in public package
+# D105: Missing docstring in magic method
+add_ignore = D102,D104,D105

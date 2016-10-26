@@ -1,0 +1,27 @@
+language: python
+python:
+- 3.5
+cache:
+  pip: true
+  directories:
+  - env
+env:
+  global:
+  - RANDOM_SEED=0
+before_install:
+- make doctor || echo "Some system dependencies might be missing"
+install:
+- make install
+script:
+- make check
+- make test
+after_success:
+- pip install coveralls scrutinizer-ocular
+- coveralls
+- ocular
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+  slack:
+    secure: MMGmsovTNJ3f2WlzkMxZxJ1YO2X4TG+HQWNalq73wE0DZ2vGK5RlOBSy3UFaR5GZsC9S4P9gtmB9gx+WG73Cg4douY3ePvw1QOAM0J1AwCXGB0KZjQUsKLry2qB+vR3cZoWGHE+Aq4ckGUZN1+nYIsDaklG+eA/5wc31wbrUih6PACF0Y10I6ivK5krsixDjwZN5uGodaQt10ymlGnjb7kggo9grjdg0I7+cgawoVwosjH0XVndxCtqJrReEyNB6x2oz4M8ud8DDDKdQ9/v1an5q+3bGQLxhsy9WPUwj0pS8sXmuZSXf1vW1sRUE+akZvdqIGKDLAeZniNScG7bD2H6wdlqgUrINhJPTmNORuYnZafEl9yAfJ9vuuzQvYkTwIuMAgQ9ZYVo+pj1K28pX6fG19THCazPtqIQ2tXNP5rcwTPQHoyYsg/KnuVFCljipGarSJSsXI0WBotGKiP7o6XfYvJvGoH+SST7XgixquN8YCgJB59kz5M/nExWuv6p2+pqxN0QmvN68tSglPWPFT5TkzKSebxww8u2K3RsRJTqtuTyDG9Jap/DYYYZkAb9kby0EgGXSc/bSkFMS/k1QxgE55ZsQO743HuaSjeFKRvHvYyBsDIEQOP83kT/qYSXmbd5nwjfceZpGtdRVsxUzZ3BwScQuq7ptHDeAShAkpCg=
