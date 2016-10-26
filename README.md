@@ -21,7 +21,7 @@ $ pip install DemonicTutor
 or directly from the source code:
 
 ```sh
-$ git clone https://github.com/KyleChamberlin/demonic-tutor.git
+$ git clone https://github.com/we-magic-so-you-dont-have-to/demonic-tutor.git
 $ cd demonic-tutor
 $ python setup.py install
 ```
