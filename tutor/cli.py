@@ -1,3 +1,4 @@
+"""Tutor cli"""
 import logging
 
 import click
@@ -11,6 +12,7 @@ log = logging.getLogger(__name__)
 @click.command()
 @click.argument('feet')
 def main(feet=None):
+    """Tutor cli entry point"""
     logging.basicConfig(level=logging.INFO)
 
     meters = utils.feet_to_meters(feet)

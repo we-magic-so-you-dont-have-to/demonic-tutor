@@ -21,7 +21,6 @@ watch_paths = ["tutor", "tests"]
 @file_validator
 def python_files(filename):
     """Match Python source files."""
-
     return all((
         filename.endswith('.py'),
         not os.path.basename(filename).startswith('.'),
@@ -31,7 +30,6 @@ def python_files(filename):
 @runnable
 def python(*_):
     """Run targets for Python."""
-
     for count, (command, title, retry) in enumerate((
         (('make', 'test-unit', 'CI=true'), "Unit Tests", True),
         (('make', 'test-int', 'CI=true'), "Integration Tests", False),

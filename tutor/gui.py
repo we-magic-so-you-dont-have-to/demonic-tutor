@@ -96,6 +96,7 @@ class Application(object):
 
 
 def main():
+    """Sample Entry point"""
     logging.basicConfig(level=logging.INFO)
     Application()
 
